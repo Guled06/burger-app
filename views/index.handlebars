@@ -1,44 +1,55 @@
-<div class="jumbotron">
-  <h1 style="text-align: center;"><img src="/assets/images/burger.jpg" alt=""></h1>
-  <br><br>
-  <h5 style="text-align: center;">Burgers To Be Devoured</h5>
+<div class="container" style="background-color: rgb(50, 54, 59);">
 
-  <ol style="text-align: center; color: rgb(158, 226, 48)">
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> foods/food-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-  </ol>
-  <br>
-  <h5 style="text-align: center;">Burger Has Been Devoured!</h5>
-
-  <ol style="text-align: center; color: rgb(44, 219, 231)">
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> foods/food-block devoured=false}}
-    {{/if}}
-    {{/each}}
-  </ol>
-
-  <h2 style="text-align: center;">Add a Burger!</h2>
-  <form class="create-form" style="text-align: center;">
-
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <input type="text" id="ca" name="burger_name">
+  <div class="jumbotron text-center bg-danger text-black">
+      <h1 class="display-6" id="app-title"> <img src="assets/images/burger.jpg" alt="">  Go Burger or Go Home!  <img src="assets/images/burger.jpg" alt=""></h1>
+      <p>Best Burgers West of the Mississippi!</p>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6 mt-4">
+      <div class="card border border-primary">
+        <div class="card-header bg-primary text-white">
+          Burgers
+        </div>
+        <!--Div to hold burgers that have not been devoured yet-->
+        <div class="card-body">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> foods/food-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
+    
+    <div class="col-md-6 mt-4">
+      <div class="card border border-success">
+        <div class="card-header bg-success text-white">
+          Devoured
+        </div>
+        <div class="card-body">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> foods/food-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="create-form" style="text-align: center;">
+    <div class="form-group" style="color: yellow;">
       <label for="slee">
-        <h5 style="color: red;">Devoured?</h5>
+        <h5>Devoured?</h5>
       </label><br>
       <input type="radio" name="devoured" value="1" checked>
-      <h6 style="color: rgb(36, 33, 240);">Yes!</h6><br>
+      Yes
       <input type="radio" name="devoured" value="0">
-      <h6 style="color: rgb(0, 17, 255);">No!</h6>
+      No
+       <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="burger_name">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Burger</button>
     </div>
-
-    <button type="submit" class="btn btn-primary">Add Burger</button>
   </form>
 </div>
