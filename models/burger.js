@@ -1,23 +1,28 @@
-const orm = require("./config/orm.js.js");
+// Import the ORM to create functions that will interact with the database.
+const orm = require("../config/orm.js");
 
-// For each of the following select methods, a string argument containing
-// wildcard character ("*") could work in most environments, but some MySQL
-// servers (like MAMP) will return an error.
+const burgers = {
+  all: (cb) => {
+    orm.selectAll("burgers", (res) => {
+      cb(res);
+    });
+  },
+  // The variables cols and vals are arrays.
+  create: (newBurgers, cb) => {
+    orm.insertOne("burgers", newBurgers, (res) => {
+      cb(res);
+    });
+  },
+  update: (burgersData, criteria, cb) => {
+    orm.updateOne("burgers", burgersData, criteria, (res) => {
+      cb(res);
+    });
+  },
 
-// Console log all the party_name's.
-orm.select("party_name", "parties");
+  // Add a delete method which uses the `orm.deleteOne` method.
+  // ... CODE HERE ...
+  
+};
 
-// Console log all the client_name's.
-orm.select("client_name", "clients");
-
-// Console log all the parties that have a party-type of grown-up.
-orm.selectWhere("parties", "party_type", "grown-up");
-
-// Console log all the clients and their parties.
-orm.leftJoin(
-  ["client_name", "party_name"],
-  "clients",
-  "parties",
-  "id",
-  "client_id"
-);
+// Export the database functions for the controller (catsController.js).
+module.exports = burgers;

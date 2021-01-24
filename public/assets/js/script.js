@@ -1,58 +1,45 @@
-$("#addmovie").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var newMovie = {
-      movie: $("#addmovie [name=movie]").val().trim()
-    };
-
-    // Send the POST request.
-    $.ajax("/api/movies", {
-      type: "POST",
-      data: newMovie
-    }).then(
-      function() {
-        console.log("added new movie");
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
+$(() => {
+    $(".change-burger").on("click", function () {
+      const id = $(this).data("id");
+      const newBurger = $(this).data("newburger");
+  
+      const newBurgerPost = { value: newBurger };
+  
+      // Send the PUT request.
+      $.ajax(`/api/burgers/${id}/devoured`, {
+        type: "PUT",
+        // Convert object to JSON
+        data: JSON.stringify(newBurgerPost),
+        // Tell the server that this request contains JSON
+        contentType: "application/json; charset=UTF-8",
+      }).then(() => {
         // Reload the page to get the updated list
         location.reload();
-      }
-    );
-  });
-
-  $("#updatemovie").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var id = $("[name=id]").val().trim();
-
-    var updatedMovie = {
-      movie: $("#updatemovie [name=movie]").val().trim()
-    };
-
-    // Send the PUT request.
-    $.ajax("/api/movies/" + id, {
-      type: "PUT",
-      data: updatedMovie
-    }).then(
-      function() {
-        console.log("updated id ", id);
+      });
+    });
+  
+    $(".create-form").on("submit", (event) => {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+  
+      const newFood = {
+        burger_name: $("#ca").val().trim(),
+        devoured: $("[name=devoured]:checked").val().trim(),
+      };
+  
+      // Send the POST request.
+      $.ajax("/api/foods", {
+        type: "POST",
+        data: newFood,
+      }).then(() => {
         // Reload the page to get the updated list
         location.reload();
-      }
-    );
+      });
+    });
+  
+    // Add your code to delete a cat when a ".delete-cat" button is clicked.
+    // ... CODE HERE ...
+    
   });
-
-  $(".delmovie").on("click", function(event) {
-    var id = $(this).data("movieid");
-
-    // Send the DELETE request.
-    $.ajax("/api/movies/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+  
