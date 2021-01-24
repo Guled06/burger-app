@@ -1,46 +1,44 @@
-
 <div class="jumbotron">
-  <div class="card">
-    <div class="card-body">
-      <h1 style="text-align: center;">Burgers! <img src="/assets/images/burger.jpg" alt=""></h1>
+  <h1 style="text-align: center;"><img src="/assets/images/burger.jpg" alt=""></h1>
+  <br><br>
+  <h5 style="text-align: center;">Burgers To Be Devoured</h5>
 
-      <h2 style="text-align: center;">Burgers To Be Devoured</h2>
+  <ol style="text-align: center; color: rgb(158, 226, 48)">
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> foods/food-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+  </ol>
+  <br>
+  <h5 style="text-align: center;">Burger Has Been Devoured!</h5>
 
-      <ol style="text-align: center; color: red">
-        {{#each burgers}}
-          {{#unless devoured}}
-            {{> foods/food-block devoured=true}}
-          {{/unless}}
-        {{/each}}
-      </ol>
-      <br>
-      <h2 style="text-align: center;">Burger Has Been Devoured!</h2>
+  <ol style="text-align: center; color: rgb(44, 219, 231)">
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> foods/food-block devoured=false}}
+    {{/if}}
+    {{/each}}
+  </ol>
 
-      <ol style="text-align: center; color: rgb(197, 53, 233)">
-        {{#each burgers}}
-          {{#if devoured}}
-            {{> foods/food-block devoured=false}}
-          {{/if}}
-        {{/each}}
-      </ol>
+  <h2 style="text-align: center;">Add a Burger!</h2>
+  <form class="create-form" style="text-align: center;">
 
-      <h2 style="text-align: center;">Add a Burger!</h2>
-      <form class="create-form" style="text-align: center;">
-
-        <div class="form-group">
-          <label for="ca">Burger Name:</label>
-          <input type="text" id="ca" name="burger_name">
-        </div>
-
-        <div class="form-group" style="background-color: rgb(44, 46, 43);">
-          <label for="slee"><h5 style="color: yellow;">Devoured?</h5></label><br>
-          <input type="radio" name="devoured" value="1" checked><h6 style="color: yellow;">Yes!</h6><br>
-          <input type="radio" name="devoured" value="0"><h6 style="color: yellow;">No!</h6>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Add Burger</button>
-      </form>
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="burger_name">
     </div>
-  </div>
-</div>
 
+    <div class="form-group">
+      <label for="slee">
+        <h5 style="color: red;">Devoured?</h5>
+      </label><br>
+      <input type="radio" name="devoured" value="1" checked>
+      <h6 style="color: rgb(36, 33, 240);">Yes!</h6><br>
+      <input type="radio" name="devoured" value="0">
+      <h6 style="color: rgb(0, 17, 255);">No!</h6>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Burger</button>
+  </form>
+</div>
