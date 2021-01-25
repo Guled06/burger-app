@@ -41,18 +41,11 @@ $(() => {
     // Add your code to delete a burger when a ".delete-burger" button is clicked.
     
     $(".delete-burger").on("click", function () {
-      const ID = $(this).data("id");
-      const deleteBurger = $(this).data("deleteburger");
-  
-      const deleteBurgerPost = { value: deleteBurger };
+      const id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax(`/api/burgers/${ID}/devoured`, {
+      $.ajax(`/api/burgers/${id}`, {
         type: "DELETE",
-        // Convert object to JSON
-        data: JSON.stringify(deleteBurgerPost),
-        // Tell the server that this request contains JSON
-        contentType: "application/json; charset=UTF-8",
       }).then(() => {
         // Reload the page to get the updated list
         location.reload();

@@ -40,8 +40,17 @@ const orm = {
   },
 
   // Add a `deleteOne` method which deletes row from a table which meets given
-  // criteria parameter
-  // ... CODE HERE ...
+  // condition parameter
+  deleteOne: (table, condition, cb) => {
+    const queryString = "DELETE FROM ?? WHERE ? LIMIT 1";
+    const values = [table, condition];
+    connection.query(queryString, values, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
 
 };
 
