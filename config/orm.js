@@ -24,7 +24,7 @@ const orm = {
     });
   },
 
-  // Example of updateValues: { name: "panther", sleepy: true }
+  // Example of updateValues:
   // Example of condition: { id: 1 }
   updateOne: (table, updateValues, condition, cb) => {
     const queryString = "UPDATE ?? SET ? WHERE ?";

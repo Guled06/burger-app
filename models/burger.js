@@ -20,7 +20,11 @@ const burgers = {
   },
 
   // Add a delete method which uses the `orm.deleteOne` method.
-  // ... CODE HERE ...
+  delete: (deleteBurger, cb) => {
+    orm.deleteOne("burgers", deleteBurger, (res) => {
+      cb(res);
+    });
+  },
   
 };
 

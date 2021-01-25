@@ -1,6 +1,6 @@
 const express = require("express");
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
 const router = express.Router();
@@ -23,8 +23,8 @@ router.post("/api/foods", (req, res) => {
   });
 });
 
-// using put to replace the value of sleepy for a
-// specific cat resource
+// using put to replace the value of devoured for a
+// specific burgers resource
 router.put("/api/burgers/:id/devoured", (req, res) => {
   const condition = { id: req.params.id };
   const update = { devoured: req.body.value };
@@ -38,9 +38,20 @@ router.put("/api/burgers/:id/devoured", (req, res) => {
   });
 });
 
-// Add a `/api/cats/:id` delete route which calls the delete method of the cat
-// model to delete the cat resource with the given id url parameter.
-// ... CODE HERE ...
+// Add a `/api/burgers/:id` delete route which calls the delete method of the burgers
+// model to delete the burgers resource with the given id url parameter.
+router.delete("/api/burgers/:id", (req, res) => {
+  const condition = { id: req.params.id };
+  const update = { devoured: req.body.value };
+
+  burger.delete(update, condition, (result) => {
+    if (result.affectedRows === 0) {
+      // If no rows were affected, then the ID must not exist, so 404
+      return res.status(404).end();
+    }
+    res.status(200).end();
+  });
+});
 
 // Export routes for server.js to use.
 module.exports = router;

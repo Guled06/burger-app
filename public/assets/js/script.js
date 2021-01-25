@@ -25,7 +25,7 @@ $(() => {
   
       const newFood = {
         burger_name: $("#ca").val().trim(),
-        devoured: $("[name=devoured]:checked").val().trim(),
+        // devoured: $("[name=devoured]:checked").val().trim(),
       };
   
       // Send the POST request.
@@ -38,8 +38,26 @@ $(() => {
       });
     });
   
-    // Add your code to delete a cat when a ".delete-cat" button is clicked.
-    // ... CODE HERE ...
+    // Add your code to delete a burger when a ".delete-burger" button is clicked.
+    
+    $(".delete-burger").on("click", function () {
+      const ID = $(this).data("id");
+      const deleteBurger = $(this).data("deleteburger");
+  
+      const deleteBurgerPost = { value: deleteBurger };
+  
+      // Send the DELETE request.
+      $.ajax(`/api/burgers/${ID}/devoured`, {
+        type: "DELETE",
+        // Convert object to JSON
+        data: JSON.stringify(deleteBurgerPost),
+        // Tell the server that this request contains JSON
+        contentType: "application/json; charset=UTF-8",
+      }).then(() => {
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    });
     
   });
   
