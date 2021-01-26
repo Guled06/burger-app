@@ -1,13 +1,20 @@
-<div class="container" style="background-color: rgb(50, 59, 57);">
-  <div class="jumbotron text-center text-black" style="background-color: rgb(136, 143, 141);">
-      <h1 class="display-6" id="app-title"> <img src="assets/images/burger.jpg" alt="">  Go Burger or Go Home!  <img src="assets/images/burger.jpg" alt=""></h1>
+<div class="container" style="background-color: rgb(201, 93, 5);">
+  <div class="jumbotron text-center text-black" style="background-color: rgb(54, 122, 65);">
+      <h1 style="color: yellow;" class="display-6" id="app-title"> <img src="assets/images/burger2.jpg" alt="">  Go Burger or Go Home!  <img src="assets/images/burger.jpg" alt=""></h1>
       <p style="color: white;">Zoom, Zoom, Zoom! My Supernova Burger!</p>
+      <div id="musicControls" class="text-center">
+        <button class="btn btn-warning btn-xs theme-button">
+          <span class="fa fa-music"></span> ~~Play Song!~~ </button>
+          
+        <button class="btn btn-primary btn-xs pause-button">
+          <span class="fa fa-pause"></span> Pause Song </button>
+      </div>
   </div>
   <div class="row mt-4">
     <div class="col-md-6 mt-4">
       <div class="card border border-primary">
         <div class="card-header" style="background-color: rgb(184, 71, 184); color: yellow">
-          Delicious Burgers!
+          Burgers Awaiting To Be Devoured!
         </div>
         <!--Div to hold burgers that have not been devoured yet-->
         <div class="card-body">
@@ -21,8 +28,8 @@
     </div>
     <div class="col-md-6 mt-4">
       <div class="card border border-success">
-        <div class="card-header bg-success text-black">
-          Devoured!
+        <div class="card-header text-black" style="background-color: rgb(184, 71, 184); color: yellow">
+          Burgers That Have Been Devoured!
         </div>
         <div class="card-body">
           {{#each burgers}}
@@ -41,7 +48,7 @@
         <label for="ca">Burger Name:</label>
         <input type="text" id="ca" name="burger_name">
       </div>
-      <button type="submit" class="btn btn-warning">Add Burger</button>
+      <button type="submit" class="btn btn-success">Add Burger</button>
     </div>
     <br>
   </form>
