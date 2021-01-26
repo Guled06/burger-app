@@ -54,18 +54,4 @@ $(() => {
     
   });
 
-  $(function() {
-
-    var audioElement1 = document.createElement("audio");
-    audioElement1.setAttribute("src", "assets/images/boombastic.m4a");
-    
-    $(".theme-button").on("click", function() {
-      audioElement.play();
-    });
-    $(".pause-button").on("click", function() {
-      audioElement.pause();
-    });
-
-});
-
   
