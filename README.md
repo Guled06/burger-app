@@ -32,21 +32,21 @@ This App was designed using the following:
 
 The main page of the app prior to the user typing his/her input of the type of burger the user wants to eat. Below is a screenshot showing how the page would look for a first-time user. 
 
-<img src="assets/images/picture1.png" alt=""> 
+<img src="./doc/picture1.png" alt=""> 
 <br>
 
 Screenshot of the app AFTER the user inputs what type of burger he/she would like to eat. Next to the burger, there are two button. If the user clicks 'devour this', then the burger will move to the right hand side of the page, shown in screenshot image #3.
 
-<img src="assets/images/picture2.png" alt=""> 
+<img src="./doc/picture2.png" alt=""> 
 <br>
 
 This is the result of the user clicking 'devour this' button, indicating that the burger has been devoured. Once the user clicks the 'devour this' button, the burger is automatically moved from the 'burgers awaiting to be devoured' list on the left side to the 'burgers that have been devoured' list on the right side. A 'delete' button is available on both sides if the user chooses to delete at anytime. 
 
-<img src="assets/images/picture3.png" alt=""> 
+<img src="./doc/picture3.png" alt=""> 
 <br>
 
 As demonstrated in this last screenshot of the application, the user can remove the burger that has been clicked to be devoured once it moves to the right side of the page under the "burgers that have been devoured" list.
 
-<img src="assets/images/picture4.png" alt=""> 
+<img src="./doc/picture4.png" alt=""> 
 
 
