@@ -22,9 +22,6 @@ db/seeds.sql
 I configured the database connection settings.
 
 I created a jawsDB database using Heroku and deployed this app on Heroku.
-
-
-This App was designed using the following:
 <br><br>
 
 # Links:
