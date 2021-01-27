@@ -1,6 +1,6 @@
-*** Burger App ***
+*** BURGER APP ***
 
-<h1> DESCRIPTION </h1>
+# Description
 
 This application allows the user to add the hamburgers they desired to devour and delete the input. 
 
@@ -9,7 +9,7 @@ Once the user visits this website, the user is given an location to input a text
 The input (considering it is a type of hamburger) will have two buttons next to it. A 'devour this' button and a 'delete' button. If the user wants to eat the hamburger, he/she can click 'devour this' and the hamburger will move to the right side of the page under the "bugers that have been devoured' list, indicating the hamburger was devoured. There will be a 'delete' button next to the devoured burger where the user can click to the delete the devoured burger. 
 <br><br>
 
-<h2>USAGE</h2>
+# Usage
 <hr>
 
 <h2>Burger-App is using MVC architectural framework</h2>
@@ -27,8 +27,18 @@ I created a jawsDB database using Heroku and deployed this app on Heroku.
 This App was designed using the following:
 <br><br>
 
-<h2>SCREENSHOTS OF APP</h2>
+# Links:
 <hr>
+
+* Heroku Link: https://deliciousburgers.herokuapp.com/
+
+* GitHub Link: https://github.com/Guled06/burger-app
+
+* Email: akindnesstoremember@gmail.com
+<br><br>
+
+# Screenshot Pictures Of App:
+<hr> 
 
 The main page of the app prior to the user typing his/her input of the type of burger the user wants to eat. Below is a screenshot showing how the page would look for a first-time user. 
 
