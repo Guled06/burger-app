@@ -1,16 +1,35 @@
-<div class="container" style="background-color: rgb(201, 93, 5);">
-  <div class="jumbotron text-center text-black" style="background-color: rgb(54, 122, 65);">
-      <h1 style="color: yellow;" class="display-6" id="app-title"> <img src="assets/images/burger2.jpg" alt="">  Go Burger or Go Home!  <img src="assets/images/burger.jpg" alt=""></h1>
-      <p style="color: white;">Zoom, Zoom, Zoom! My Supernova Burger!</p>
+<style>
+  body {
+  background-image: url('assets/images/burgerone.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.jumbotron {
+  background: transparent;
+}
+
+.card {
+  background-color: brown;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+</style>
+
+<div class="container">
+  <div class="jumbotron text-center text-black">
+      <h1 style="color: yellow; background-color:brown" class="display-6" id="app-title"> Go Burger OR Go Home! </h1>
+      <p style="color: white; font-size:large; background-color:brown">Zoom, Zoom, Zoom! My Supernova Burger!</p>
   </div>
-  <div class="row mt-4">
-    <div class="col-md-6 mt-4">
+  <div class="row mt-5">
+    <div class="col-md-6 mt-5">
       <div class="card border border-primary">
         <div class="card-header" style="background-color: rgb(184, 71, 184); color: yellow">
           Burgers Awaiting To Be Devoured!
         </div>
         <!--Div to hold burgers that have not been devoured yet-->
-        <div class="card-body">
+        <div class="card-body" style="color: white;">
           {{#each burgers}}
           {{#unless devoured}}
           {{> foods/food-block}}
@@ -19,12 +38,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 mt-4">
+    <div class="col-md-6 mt-5">
       <div class="card border border-success">
         <div class="card-header text-black" style="background-color: rgb(184, 71, 184); color: yellow">
           Burgers That Have Been Devoured!
         </div>
-        <div class="card-body">
+        <div class="card-body" style="color: white;">
           {{#each burgers}}
           {{#if devoured}}
           {{> foods/food-block}}
@@ -35,13 +54,13 @@
     </div>
   </div>
   <form class="create-form" style="text-align: center;">
-    <div class="form-group" style="color: yellow;">
+    <div class="form-group" style="color: black;">
       <br>
       <div class="form-group">
-        <label for="ca">Burger Name:</label>
+        <label for="ca" style="background-color: lightblue;">Burger Name:</label>
         <input type="text" id="ca" name="burger_name">
       </div>
-      <button type="submit" class="btn btn-success">Add Burger</button>
+      <button type="submit" class="btn" style="background-color: rgb(184, 71, 184); color: yellow">Add Burger</button>
     </div>
     <br>
   </form>
